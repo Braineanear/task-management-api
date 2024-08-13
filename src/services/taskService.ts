@@ -3,9 +3,7 @@ import { ITask } from '../interfaces/taskInterface';
 
 class TaskService {
     public createTask = async (taskData: Partial<ITask>): Promise<ITask> => {
-        const task = new Task(taskData);
-
-        await task.save();
+        const task = await Task.create(taskData);
 
         return task;
     }
