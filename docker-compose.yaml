@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      - PORT=8080
+      - MONGODB_URL=mongodb://mongodb:27017/task-management
+      - APP_ENV=development
+      - JWT_SECRET=#2v34#13$5$@%v4
+    networks:
+      - backend
+    restart: always
+    hostname: app
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  mongodata:
