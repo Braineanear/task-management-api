@@ -34,16 +34,17 @@ This project is a Task Management API built using Node.js, Express.js, and Mongo
 - Node.js (version 16 or higher)
 - Docker (version 20 or higher)
 - Docker Compose (version 1.29 or higher)
+- Yarn
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/task-management-api.git
+git clone https://github.com/Braineanear/task-management-api
 cd task-management-api
 ```
 
 ### Install Dependencies
 ```bash
-npm install
+yarn
 ```
 
 ### Environment Variables
@@ -62,7 +63,7 @@ JWT_SECRET=your_jwt_secret_key
 To run the application locally using Node.js:
 
 ```bash
-npm run start
+yarn run start:dev
 ```
 
 #### Using Docker Compose
@@ -78,7 +79,7 @@ This command will build the application Docker image and start the application a
 To run the tests using Jest:
 
 ```bash
-npm run test
+yarn run test
 ```
 
 ## API Endpoints
