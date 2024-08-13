@@ -10,8 +10,7 @@ class AuthService {
     }
 
     public registerUser = async (username: string, password: string): Promise<IUser> => {
-        const user = new User({ username, password });
-        await user.save();
+        const user = await User.create({ username, password });
 
         user.password = undefined;
 
